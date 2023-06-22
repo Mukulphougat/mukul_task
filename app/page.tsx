@@ -8,7 +8,7 @@ export default function Home() {
 
       </div>
         <div className={"w-2/3"}>
-            <SignIn/>
+            {/*<SignIn/>*/}
         </div>
     </main>
   )
