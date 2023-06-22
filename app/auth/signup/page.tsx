@@ -1,7 +1,11 @@
-import { SignUp } from "@clerk/nextjs";
+"use client"
+import {SignUp} from "@clerk/nextjs";
 
 const SignUpPage = () => (
-    <SignUp path="/auth/sign-up" routing="path" signInUrl="/auth/sign-in" />
+    <div className={"min-h-screen w-full grid place-items-center"}>
+        <SignUp />
+    </div>
+
 );
 
 export default SignUpPage;
