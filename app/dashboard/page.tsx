@@ -9,7 +9,7 @@ import {SignedIn, SignedOut, SignIn, UserButton} from "@clerk/nextjs";
 const montserrat=Montserrat({subsets: ['latin']})
 const latoFont=Lato({weight:"300",subsets: ['latin']})
 
-export default function Dashboard(){
+export default function Dashboard({children}:{ children: React.ReactNode }){
     return(
         <>
         <SignedIn>
@@ -229,6 +229,7 @@ export default function Dashboard(){
                             </div>
                         </div>
                     </div>
+                    {children}
                 </div>
 
             </div>
