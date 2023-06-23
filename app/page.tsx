@@ -1,11 +1,14 @@
-"use client"
 import {Montserrat} from "next/font/google";
-import SignInPage from "@/app/auth/signin/page";
-import {SignIn} from "@clerk/nextjs";
+import {currentUser, SignedIn, SignedOut, SignIn} from "@clerk/nextjs";
+import {useRouter} from "next/navigation";
+import {User} from "@clerk/backend";
+import RedirectPage from "@/app/RedirectPage";
+
 const montserrat=Montserrat({subsets: ['latin']})
 
 
-export default function Home() {
+export default async function Home() {
+    const user:User|null=await currentUser();
   return (
     <main className="flex flex-row h-full w-full items-center justify-between">
       <div className={"w-2/5 grid place-items-center h-screen bg-black"}>
@@ -18,8 +21,18 @@ export default function Home() {
             {/*    </div>*/}
             {/*    <h1 className={"text-black"}>Sign in to your account</h1>*/}
             {/*</div>*/}
-            <SignIn />
-
+            {/*{*/}
+            {/*    user !== null ?*/}
+            {/*        :*/}
+            {/*        <SignIn />*/}
+            {/*}*/}
+            <SignedIn>
+                {/*<h1 className={"text-black"}>Im Signed In</h1>*/}
+                <RedirectPage />
+            </SignedIn>
+            <SignedOut>
+                <SignIn/>
+            </SignedOut>
         </div>
     </main>
   )
