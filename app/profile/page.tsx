@@ -18,7 +18,7 @@ export default class Profile extends React.Component<{ children: React.ReactNode
                     <div className={"text-black h-screen w-full bg-gray-100 flex flex-row p-10"}>
                         <div className={"w-1/6 flex flex-col rounded-2xl bg-black"}>
                             <div className={"mx-2 h-24 p-5"}>
-                                <h1 className={"text-4xl text-white font-bold" + montserrat.className}>Board.</h1>
+                                <h1 className={"text-4xl text-white font-bold " + montserrat.className}>Board.</h1>
                             </div>
                             <div className={"mx-7 flex flex-col h-full justify-between top-10"}>
                                 <div className={"my-4 flex flex-col"}>
