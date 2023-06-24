@@ -74,7 +74,7 @@ export default function Profile({children}:{ children: React.ReactNode }){
                             </div>
                         </div>
                     </div>
-                    {/*Add Somethings*/}
+                    {/*Add Something By Me*/}
                 </div>
             </SignedIn>
             <SignedOut>
