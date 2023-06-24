@@ -6,8 +6,12 @@ import RenderLineChart from "@/components/MY_CHART";
 import PIE_CHART from "@/components/PIE_CHART";
 import {VictoryPie} from "victory";
 import {SignedIn, SignedOut, SignIn, UserButton} from "@clerk/nextjs";
+import useSWR from "swr";
+import axios from "axios";
+import SchedulesTable from "@/components/dataTable";
 const montserrat=Montserrat({subsets: ['latin']})
 const latoFont=Lato({weight:"300",subsets: ['latin']})
+
 
 export default class Schedules extends React.Component<{ children: React.ReactNode }> {
     render() {
@@ -75,8 +79,11 @@ export default class Schedules extends React.Component<{ children: React.ReactNo
                                     <UserButton/>
                                 </div>
                             </div>
-                        </div>
+                            <div className={"w-full h-fit rounded-lg bg-white text-black"}>
 
+                                <SchedulesTable />
+                            </div>
+                        </div>
                     </div>
                 </SignedIn>
                 <SignedOut>
