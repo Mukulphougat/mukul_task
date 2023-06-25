@@ -8,12 +8,8 @@ const montserrat=Montserrat({subsets: ['latin']})
 const fetcher=async (url:string)=>{
     return await axios.get(url).then(res=>res.data);
 }
-const fetchTransactionInfo=async (url:string)=>{
-    return await axios.get(url).then(res=>res.data);
-}
 export default function SchedulesTable(){
     const {data:result}=useSWR('https://dummyjson.com/todos?limit=10',fetcher);
-    const {data:transactionData}=useSWR('',fetchTransactionInfo)
     let index=0;
     return(
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">

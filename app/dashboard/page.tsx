@@ -44,8 +44,8 @@ export default class Dashboard extends React.Component<{ children: React.ReactNo
                                     </Link>
                                 </div>
                                 <div className={"my-4 flex flex-col"}>
-                                    <h2 className={"text-sm text-white " + montserrat.className}>Help</h2>
-                                    <h2 className={"text-sm text-white " + montserrat.className}>Contact Us</h2>
+                                    <a href={"mailto:mukulphoughatabc@gmail.com"} className={"text-sm text-white " + montserrat.className}>Help</a>
+                                    <a href={"mailto:mukulphoughatabc@gmail.com"} className={"text-sm text-white " + montserrat.className}>Contact Us</a>
                                 </div>
                             </div>
                         </div>
