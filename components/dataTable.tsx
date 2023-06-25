@@ -45,7 +45,7 @@ export default function SchedulesTable(){
                         <tr key={todo.id} className="bg-white border-black text-black">
                             <td className="w-4 p-4">
                                 <div className="flex items-center">
-                                    <input checked={todo.completed === "true"} id="checkbox-table-1" type="checkbox"
+                                    <input id="checkbox-table-1" type="checkbox"
                                            className="w-4 h-4 text-black border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
                                     <label htmlFor="checkbox-table-1"
                                            className="sr-only">checkbox</label>
