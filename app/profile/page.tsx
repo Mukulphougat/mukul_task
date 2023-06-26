@@ -42,7 +42,7 @@ export default function Profile(props: { children: React.ReactNode }) {
 
                         </div>
                         <div className={"w-full bg-transparent rounded-lg h-4/5 my-6 grid place-items-center"}>
-                            <UserProfileSection/>
+                            {/*<UserProfileSection/>*/}
                         </div>
                     </div>
                     {/*Add Something By Me*/}
