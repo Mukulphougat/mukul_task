@@ -1,15 +1,15 @@
-"use client"
+'use client'
 import {Lato, Montserrat} from "next/font/google";
-import {SignedIn, SignedOut, SignIn} from "@clerk/nextjs";
+import {currentUser, SignedIn, SignedOut, SignIn} from "@clerk/nextjs";
 import React from "react";
-import UserProfileSection from "@/components/UserProfileSection";
 import HeaderForProfile from "@/components/HeaderForProfile";
+import {User} from "@clerk/nextjs/api";
+import SignOutButtonForProfile from "@/components/SignOutButtonForProfile";
 
 const montserrat=Montserrat({subsets: ['latin']})
 const latoFont=Lato({weight:"300",subsets: ['latin']})
-export default class Profile extends React.Component<{ children: React.ReactNode }> {
+export default class Profile extends React.Component {
     render() {
-        let {children} = this.props;
         // Modifying
         return (
             <>
@@ -44,7 +44,24 @@ export default class Profile extends React.Component<{ children: React.ReactNode
 
                             </div>
                             <div className={"w-full bg-transparent rounded-lg h-4/5 my-6 grid place-items-center"}>
-                                <UserProfileSection/>
+                                <div className={"w-full flex flex-col rounded-lg h-full bg-white"}>
+                                    <div className={"w-full flex flex-row justify-center my-10"}>
+                                        <img width={150} height={150} className={"rounded-full"}
+                                             src={""} alt={"User Profile"}/>
+                                    </div>
+                                    <div className={"w-full flex flex-row justify-center my-5"}>
+                                        <h1 className={"text-2xl font-medium " + montserrat.className}>Mukul
+                                            Phougat</h1>
+                                    </div>
+                                    <div className={"w-full flex flex-row justify-center my-5"}>
+                                        <h1 className={"text-2xl text-blue-400 underline hover:no-underline font-medium " + montserrat.className}>
+                                            <a href={`mailto:mukulphoughat@gmail.com`}>mukulphoughat@gmail.com</a>
+                                        </h1>
+                                    </div>
+                                    <div className={"w-full flex flex-row justify-center my-5"}>
+                                        <SignOutButtonForProfile/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         {/*Add Something By Me*/}
