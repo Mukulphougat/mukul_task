@@ -1,15 +1,13 @@
 import {Lato, Montserrat} from "next/font/google";
-import {currentUser, SignedIn, SignedOut, SignIn} from "@clerk/nextjs";
-import type {User} from "@clerk/nextjs/api"
-import React, {JSX} from "react";
+import {SignedIn, SignedOut, SignIn} from "@clerk/nextjs";
+import React from "react";
 import HeaderForProfile from "@/components/HeaderForProfile";
-import SignOutButtonForProfile from "@/components/SignOutButtonForProfile";
+import UserProfileSection from "@/components/UserProfileSection";
 
 const montserrat=Montserrat({subsets: ['latin']})
 const latoFont=Lato({weight:"300",subsets: ['latin']})
-export default async function Profile(props: { children: JSX.Element }) {
+export default function Profile(props: { children: React.ReactNode }) {
     let {children} = props;
-    const user: User | null = await currentUser();
 
     return (
         <>
@@ -44,23 +42,7 @@ export default async function Profile(props: { children: JSX.Element }) {
 
                         </div>
                         <div className={"w-full bg-transparent rounded-lg h-4/5 my-6 grid place-items-center"}>
-                            <div className={"w-full flex flex-col rounded-lg h-full bg-white"}>
-                                <div className={"w-full flex flex-row justify-center my-10"}>
-                                    <img width={150} height={150} className={"rounded-full"}
-                                         src={user !== null ? user.imageUrl : ""} alt={"User Profile"}/>
-                                </div>
-                                <div className={"w-full flex flex-row justify-center my-5"}>
-                                    <h1 className={"text-2xl font-medium " + montserrat.className}>{user?.firstName + " " + user?.lastName}</h1>
-                                </div>
-                                <div className={"w-full flex flex-row justify-center my-5"}>
-                                    <h1 className={"text-2xl text-blue-400 underline hover:no-underline font-medium " + montserrat.className}>
-                                        <a href={`mailto:${user?.emailAddresses[0].emailAddress}`}>{user?.emailAddresses[0].emailAddress}</a>
-                                    </h1>
-                                </div>
-                                <div className={"w-full flex flex-row justify-center my-5"}>
-                                    <SignOutButtonForProfile/>
-                                </div>
-                            </div>
+                            <UserProfileSection/>
                         </div>
                     </div>
                     {/*Add Something By Me*/}
