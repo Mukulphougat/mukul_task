@@ -6,6 +6,7 @@ import RenderLineChart from "@/components/MY_CHART";
 import PIE_CHART from "@/components/PIE_CHART";
 import {VictoryPie} from "victory";
 import {SignedIn, SignedOut, SignIn, UserButton, UserProfile} from "@clerk/nextjs";
+import SignOutButtonForProfile from "@/components/SignOutButtonForProfile";
 const montserrat=Montserrat({subsets: ['latin']})
 const latoFont=Lato({weight:"300",subsets: ['latin']})
 
@@ -15,7 +16,7 @@ export default class Settings extends React.Component<{ children: React.ReactNod
         return (
             <>
                 <SignedIn>
-                    <div className={"text-black min-h-screen w-full  bg-gray-100 flex flex-row p-10"}>
+                    <div className={"text-black max-h-screen w-full  bg-gray-100 flex flex-row p-10"}>
                         <div className={"w-1/6 flex flex-col rounded-2xl bg-black"}>
                             <div className={"mx-2 h-24 p-5"}>
                                 <h1 className={"text-4xl text-white font-bold " + montserrat.className}>Board.</h1>
@@ -75,11 +76,17 @@ export default class Settings extends React.Component<{ children: React.ReactNod
                                 {/*    <UserButton/>*/}
                                 {/*</div>*/}
                             </div>
-                            <div className={"w-full bg-transparent rounded-lg h-4/5 grid place-items-center"}>
-                                <div className={"w-fit bg-transparent overflow-y-scroll h-full"}>
+                            {/*<div className={"w-full bg-transparent rounded-lg h-4/5 grid place-items-center"}>*/}
+                            {/*    <div className={"w-fit bg-transparent overflow-y-scroll h-full"}>*/}
+                            {/*        <UserProfile/>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+                            <div className={"w-full bg-transparent h-4/5 grid place-items-center"}>
+                                <div className={"w-fit rounded-lg bg-transparent overflow-y-scroll h-full"}>
                                     <UserProfile/>
                                 </div>
                             </div>
+
                         </div>
 
                     </div>
@@ -91,5 +98,8 @@ export default class Settings extends React.Component<{ children: React.ReactNod
                 </SignedOut>
             </>
         )
+            // <div className={"w-full flex flex-row justify-center my-5"}>
+            // <SignOutButtonForProfile />
+            // </div>
     }
 }
