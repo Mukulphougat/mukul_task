@@ -1,4 +1,3 @@
-"use server"
 import SignOutButtonForProfile from "@/components/SignOutButtonForProfile";
 import React from "react";
 import {User} from "@clerk/nextjs/api";
