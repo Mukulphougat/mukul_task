@@ -1,11 +1,12 @@
 "use server"
+
 import SignOutButtonForProfile from "@/components/SignOutButtonForProfile";
 import React from "react";
 import {User} from "@clerk/nextjs/api";
 import {currentUser} from "@clerk/nextjs";
 import {Montserrat} from "next/font/google";
 const montserrat=Montserrat({subsets: ['latin']})
-export default async function UserProfileSection(){
+export default async function UserProfileSection() {
     const user: User | null = await currentUser();
 
     return (
