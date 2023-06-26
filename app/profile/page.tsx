@@ -14,7 +14,7 @@ export default class Profile extends React.Component<{ children: React.ReactNode
             <>
                 <SignedIn>
                     <div className={"text-black h-screen w-full bg-gray-100 flex flex-row p-10"}>
-                        <HeaderForProfile/>
+                        {/*<HeaderForProfile/>*/}
                         <div className={"w-5/6 mx-14"}>
                             <div className={"flex flex-row w-full h-16 justify-between"}>
                                 <h1 className={"text-3xl font-bold " + montserrat.className}>Profile</h1>
