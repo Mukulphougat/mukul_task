@@ -1,3 +1,4 @@
+"use client"
 import {Lato, Montserrat} from "next/font/google";
 import {SignedIn, SignedOut, SignIn} from "@clerk/nextjs";
 import React from "react";
