@@ -1,13 +1,13 @@
 import {Lato, Montserrat} from "next/font/google";
 import {currentUser, SignedIn, SignedOut, SignIn} from "@clerk/nextjs";
 import type {User} from "@clerk/nextjs/api"
-import React from "react";
+import React, {JSX} from "react";
 import HeaderForProfile from "@/components/HeaderForProfile";
 import SignOutButtonForProfile from "@/components/SignOutButtonForProfile";
 
 const montserrat=Montserrat({subsets: ['latin']})
 const latoFont=Lato({weight:"300",subsets: ['latin']})
-export default async (props: { children: React.ReactNode }) => {
+export default async function Profile(props: { children: JSX.Element }) {
     let {children} = props;
     const user: User | null = await currentUser();
 
