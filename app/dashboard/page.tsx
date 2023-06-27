@@ -6,6 +6,7 @@ import RenderLineChart from "@/components/MY_CHART";
 import PIE_CHART from "@/components/PIE_CHART";
 import {VictoryPie} from "victory";
 import {SignedIn, SignedOut, SignIn, UserButton} from "@clerk/nextjs";
+import SignInPageAfterSignout from "@/components/SignInPageAfterSignout";
 const montserrat=Montserrat({subsets: ['latin']})
 const latoFont=Lato({weight:"300",subsets: ['latin']})
 
@@ -266,9 +267,11 @@ export default class Dashboard extends React.Component<{ children: React.ReactNo
                     </div>
                 </SignedIn>
                 <SignedOut>
-                    <div className={"w-full min-h-screen grid place-items-center"}>
-                        <SignIn/>
-                    </div>
+                    {/*<div className={"w-full min-h-screen grid place-items-center"}>*/}
+                    {/*    <SignIn/>*/}
+                    {/*</div>*/}
+                    <SignInPageAfterSignout />
+
                 </SignedOut>
             </>
         )

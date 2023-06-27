@@ -10,7 +10,7 @@ export default async function UserProfileSection() {
     return (
         <div className={"w-full flex flex-col rounded-lg h-full bg-white"}>
             <div className={"w-full flex flex-row justify-center my-10"}>
-                <img width={150} height={150} className={"rounded-full"}
+                <img width={150} height={150} className={"rounded-full hover:scale-110 border-4 border-amber-300"}
                      src={user !== null ? user.imageUrl : ""} alt={"User Profile"}/>
             </div>
             <div className={"w-full flex flex-row justify-center my-5"}>

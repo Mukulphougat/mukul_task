@@ -1,8 +1,9 @@
 import {Lato, Montserrat} from "next/font/google";
-import {SignedIn, SignedOut, SignIn} from "@clerk/nextjs";
+import {RedirectToSignIn, RedirectToUserProfile, SignedIn, SignedOut, SignIn} from "@clerk/nextjs";
 import React from "react";
 import HeaderForProfile from "@/components/HeaderForProfile";
 import UserProfileSection from "@/components/UserProfileSection";
+import SignInPageAfterSignout from "@/components/SignInPageAfterSignout";
 
 const montserrat=Montserrat({subsets: ['latin']})
 const latoFont=Lato({weight:"300",subsets: ['latin']})
@@ -66,9 +67,10 @@ export default async function Profile() {
                 </div>
             </SignedIn>
             <SignedOut>
-                <div className={"w-full min-h-screen grid place-items-center"}>
-                    <SignIn/>
-                </div>
+                {/*<div className={"w-full min-h-screen grid place-items-center"}>*/}
+                {/*    <SignIn/>*/}
+                {/*</div>*/}
+                <SignInPageAfterSignout />
             </SignedOut>
         </>
     )
