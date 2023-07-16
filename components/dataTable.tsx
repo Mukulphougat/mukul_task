@@ -7,7 +7,7 @@ import {UsersLocationData} from "@/components/UsersData";
 const montserrat=Montserrat({subsets: ['latin']})
 const fetcher=async (url:string)=>{
     // Modification Here
-    const response=await fetch(url);
+    const response=await fetch(url, {cache: "force-cache"});
     return await response.json();
     // return await axios.get(url).then(res=>res.data);
 }

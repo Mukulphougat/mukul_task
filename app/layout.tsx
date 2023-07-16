@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter, Montserrat } from 'next/font/google'
 import {ClerkProvider} from "@clerk/nextjs";
-import Head from "next/head";
+import React from "react";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +23,7 @@ export default function RootLayout({
           <html lang="en">
           <head>
               <link rel={'icon'} href={'/img_8.png'}/>
+              <title>Board.</title>
           </head>
             <body className={inter.className}>{children}</body>
           </html>

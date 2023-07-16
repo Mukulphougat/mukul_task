@@ -4,7 +4,7 @@ import axios from "axios";
 import {Montserrat} from "next/font/google";
 const montserrat=Montserrat({subsets: ['latin']});
 const fetcher=async (url:string)=>{
-    const response=await fetch(url);
+    const response=await fetch(url, {cache: "force-cache"});
     return await response.json();
 }
 export default function TransactionTable(){
