@@ -1,3 +1,4 @@
+import './globals.css'
 import {Montserrat} from "next/font/google";
 import {currentUser, SignedIn, SignedOut, SignIn} from "@clerk/nextjs";
 import {useRouter} from "next/navigation";
