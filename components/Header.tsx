@@ -12,7 +12,7 @@ export default function Header(){
                 <div className={"my-4 flex flex-col"}>
                     <Link href={"/main"} className={"flex my-2 flex-row"}>
                         <img src={"img.png"} alt={"icon"} height={16} width={18}/>
-                        <h1 className={"mx-4 text-white font-bold " + montserrat.className}>Dashboard</h1>
+                        <h1 className={"mx-4 text-white " + montserrat.className}>Dashboard</h1>
                     </Link>
                     <Link href={"/main/transactions"} className={"flex my-2 flex-row"}>
                         <img src={"img_1.png"} alt={"icon"} height={16} width={18}/>
