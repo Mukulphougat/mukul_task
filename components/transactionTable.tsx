@@ -4,7 +4,8 @@ import axios from "axios";
 import {Montserrat} from "next/font/google";
 const montserrat=Montserrat({subsets: ['latin']});
 const fetcher=async (url:string)=>{
-    return await axios.get(url).then(res=>res.data);
+    const response=await fetch(url);
+    return await response.json();
 }
 export default function TransactionTable(){
     let transactionsAmount:number[]=[]

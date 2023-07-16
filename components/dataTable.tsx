@@ -6,7 +6,9 @@ import {Montserrat} from "next/font/google";
 import {UsersLocationData} from "@/components/UsersData";
 const montserrat=Montserrat({subsets: ['latin']})
 const fetcher=async (url:string)=>{
-    return await axios.get(url).then(res=>res.data);
+    const response=await fetch(url);
+    return await response.json();
+    // return await axios.get(url).then(res=>res.data);
 }
 export default function SchedulesTable(){
     const {data:result}=useSWR('https://dummyjson.com/todos?limit=10',fetcher);
